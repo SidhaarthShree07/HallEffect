@@ -1,0 +1,41 @@
+md-select {
+    padding: 0px 2px 0px !important;
+}
+
+#procedure_list{
+	margin: 0px 0px -2px 10px;
+}
+
+#insertprobe{
+	margin: 7px 0px -2px -46px;
+}
+
+#current_num{
+	margin: -3px 0px -6px 0px;
+}
+
+#material_list{
+	margin: -4px 0px 2px 0px;
+}
+
+#thickness_num{
+	margin: 0px 0px -4px -1px;
+}
+
+#hallcurrent_num{
+	margin: -4px 0px -2px 0px;
+}
+
+#reset{
+	margin: 7px 0px 11px 2px;
+}
+
+#show_result{
+	margin: 7px 0px -2px 19px;
+}
+
+#site-sidenav{
+	display: none;
+	overflow-x: hidden; 
+}
+
