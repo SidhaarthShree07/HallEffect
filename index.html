@@ -38,10 +38,16 @@
                 .accentPalette('red');
     });
 </script>
+
+<style>
+	body{
+		color: wheat;
+	}
+</style>
 </head>
 
-<body style="background-color: #f2f2f2;" ng-app="starterApp" ng-controller="UserController as ul">
-<md-toolbar class="md-toolbar-tools" id="main">
+<body style="background-color:#242424;" ng-app="starterApp" ng-controller="UserController as ul">
+<md-toolbar class="md-toolbar-tools" id="main" style="background-color: #242424; color: wheat;">
 	<md-button class="md-icon-button" hide-gt-md ng-click="ul.toggleList()" aria-label="Show User List">
 		<md-icon md-svg-icon="menu" ></md-icon>
 	</md-button>
@@ -54,24 +60,24 @@
 		<md-icon md-svg-icon="fullscreen"></md-icon>
 	</md-button>
 </md-toolbar>
-<md-content flex layout="row" style="background-color: #f2f2f2;">
-	<md-content  id="content" layout="column"  style="background-color: #f2f2f2;" md-swipe-right="toggleSidenav()">        
+<md-content flex layout="row" style="background-color: #242424; color: wheat;">
+	<md-content  id="content" layout="column"  style="background-color: #242424; color: wheat;" md-swipe-right="toggleSidenav()">        
 		<canvas id="demoCanvas" width="700" height="700" align="center" layout-fill experiment></canvas>
 		<md-content ng-show="showgraph" id="graphDiv" layout-xs ng-hide="divshow" class="md-default-theme" aria-hidden="false" style="">
 		</md-content>
 		<div id="Copyright" layout="row" layout-align="center end">{{copyright}}</div>         
     </md-content>
-    <md-sidenav class="site-sidenav md-sidenav-left" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" id="site-sidenav" md-swipe-left="toggleSidenav()">
-    <div>  
-	<md-button id="variables" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle1()">{{variables}} <span aria-hidden="true">
+    <md-sidenav class="site-sidenav md-sidenav-left" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" id="site-sidenav" md-swipe-left="toggleSidenav()" style="background-color: #242424; color: wheat;">
+    <div style="background-color: #2d2d2d; color: wheat;">  
+	<md-button id="variables" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle1()" style="background-color: #2d2d2d; color: wheat;">{{variables}} <span aria-hidden="true">
 	<md-icon md-svg-src="md-toggle-arrow"  aria-hidden="true" ng-animate="{enter: 'rotate', leave: 'rotateCounterwise'}" ng-class="{true: 'rotate', false: 'rotateCounterwise'}[isActive1]" ></md-icon>
 </span> </md-button> 
       
 	    <!-- Insert dropdown box -->
 		<div ng-hide="showVariables" class="div">
 
-		<md-content id="procedure_list" class="md-title selectable" layout-padding="">{{select_procedure}}</md-content>
-		<md-content class="md-padding" >
+		<md-content id="procedure_list" class="md-title selectable" layout-padding="" style="background-color: #2d2d2d; color: wheat;">{{select_procedure}}</md-content>
+		<md-content class="md-padding" style="background-color: #2d2d2d; color: wheat;">
 			<md-select ng-disabled="procedure_disable" ng-model="procedureModel" ng-change="changeProcedure()" placeholder = "{{initial_procedure}}">
 			<md-option ng-repeat="x in procedure_array" value="{{ x.type }}">{{ x.procedure}}</md-option>
 			</md-select>
@@ -79,34 +85,34 @@
 
 		<!-- Probe button -->
         <section layout="row" layout-align="center center">
-			<md-button class="md-raised" ng-disabled="insertprobe_disable" ng-model="insertprobe" id="insertprobe" ng-click="insertprobe();" >{{insertprobe_txt}}</md-button>
+			<md-button class="md-raised" ng-disabled="insertprobe_disable" ng-model="insertprobe" id="insertprobe" ng-click="insertprobe();" style="background-color:black; color: wheat;">{{insertprobe_txt}}</md-button>
         </section>
 		
 		<div ng-hide="showVariables" class="div">
 			<!-- Insert slider1 label -->
-			<md-content class="md-title" ng-model="Current" layout-padding id="current_num">{{current}} : {{current_num}} {{ammeter}}</md-content>
+			<md-content class="md-title" ng-model="Current" layout-padding id="current_num" style="background-color: #2d2d2d; color: wheat;">{{current}} : {{current_num}} {{ammeter}}</md-content>
 			<!-- Insert slider1 -->
 			<div layout>
 			<md-slider flex ng-disabled="current_disable" ng-change="changeCurrent()" ng-model="currentNum" step="0.5" min="1" max="5" aria-label="rating"></md-slider>
 		</div>
 		
 		<!-- Insert dropdown box -->		
-		<md-content id="material_list" class="md-title selectable ng-binding md-default-theme" layout-padding="">{{select_material}}</md-content>
-		<md-content class="md-padding" >
+		<md-content id="material_list" class="md-title selectable ng-binding md-default-theme" layout-padding="" style="background-color: #2d2d2d; color: wheat;">{{select_material}}</md-content>
+		<md-content class="md-padding" style="background-color: #2d2d2d; color: wheat;">
 			<md-select ng-disabled="material_disable" ng-model="materialModel" ng-change="changeMaterial()" placeholder = {{initial_material}}>
-			<md-option ng-repeat="x in material_array" value="{{ x.index }}">{{x.material}}</md-option>
+			<md-option ng-repeat="x in material_array" value="{{ x.index }}" style="background-color: #2d2d2d; color: wheat;">{{x.material}}</md-option>
 			</md-select>
 		</md-content>
 		 
 		<!-- Insert slider2 label -->
-		<md-content class="md-title" ng-model="Thickness" layout-padding id="thickness_num">{{thickness}} : {{thickness_num}} {{meter}}</md-content>
+		<md-content class="md-title" ng-model="Thickness" layout-padding id="thickness_num" style="background-color: #2d2d2d; color: wheat;">{{thickness}} : {{thickness_num}} {{meter}}</md-content>
 		<!-- Insert slider2 -->
 		<div layout>
 			<md-slider flex ng-disabled="thickness_disable" ng-change="changeThickness()" ng-model="thicknessNum" step="0.1" min="0.1" max="0.9" aria-label="rating"></md-slider>
 		</div>
 			
 		<!-- Insert slider3 label -->
-		<md-content class="md-title" ng-model="Hallcurrent" layout-padding id="hallcurrent_num">{{hallcurrent}} : {{hallcurrent_num}} {{microammeter}}</md-content>
+		<md-content class="md-title" ng-model="Hallcurrent" layout-padding id="hallcurrent_num" style="background-color: #2d2d2d; color: wheat;">{{hallcurrent}} : {{hallcurrent_num}} {{microammeter}}</md-content>
 		<!-- Insert slider3 -->
 		<div layout>
 			<md-slider flex ng-disabled="hallcurrent_disable" ng-change="changeHallcurrent()" ng-model="hallcurrentNum" step="0.5" min="1" max="5" aria-label="rating"></md-slider>
@@ -114,12 +120,12 @@
 		
 		<!-- Voltage button -->
 		<section layout="row" layout-align="center center">
-            <md-button class="md-raised" ng-disabled="showvoltage_disable" ng-model="showvoltage" id="showvoltage" ng-click="showvoltage();" >{{showvoltage_txt}}</md-button>
+            <md-button class="md-raised" ng-disabled="showvoltage_disable" ng-model="showvoltage" id="showvoltage" ng-click="showvoltage();" style="background-color: black; color: wheat;">{{showvoltage_txt}}</md-button>
         </section>	
 		
 		<!-- Reset button -->
 		<section layout="row" layout-align="center center">
-            <md-button class="md-raised" ng-disabled="reset_disable" ng-model="reset" id="reset" ng-click="reset();" >{{reset_txt}}</md-button>
+            <md-button class="md-raised" ng-disabled="reset_disable" ng-model="reset" id="reset" ng-click="reset();" style="background-color: black; color: wheat;">{{reset_txt}}</md-button>
         </section>		
 		</div>
 		</div>
@@ -137,9 +143,9 @@
 		</div>	
 		
 		<!-- Insert result label --> 
-		<div ng-hide="showValue" class="div">
-			<md-content ng-show="hide_show_result" class="md-title selectable" layout-padding>{{hall_coefficient}} : {{hall_coefficient_value}} {{hall_coefficient_unit}}</md-content>
-			<md-content ng-show="hide_show_result" class="md-title selectable" layout-padding>{{carrier_concentration}} : {{carrier_concentration_value}} {{carrier_concentration_unit}}</md-content>
+		<div ng-hide="showValue" class="div" style="background-color: #2d2d2d; color: wheat;">
+			<md-content ng-show="hide_show_result" class="md-title selectable" layout-padding style="background-color: #2d2d2d; color: wheat;">{{hall_coefficient}} : {{hall_coefficient_value}} {{hall_coefficient_unit}}</md-content>
+			<md-content ng-show="hide_show_result" class="md-title selectable" layout-padding style="background-color: #2d2d2d; color: wheat;">{{carrier_concentration}} : {{carrier_concentration_value}} {{carrier_concentration_unit}}</md-content>
 		</div>	
 					
     </div>
